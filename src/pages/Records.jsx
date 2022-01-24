@@ -29,7 +29,7 @@ function Records() {
 
     }, [value, state])
 
-
+    // func to sorted by name of user
     const sortFirstLetter = () => {
         setFilter(state.sort(function (left, right) {
             if (left.name[0] < right.name[0]) return -1;
@@ -38,6 +38,7 @@ function Records() {
         }))
     }
 
+    // function for deleting from the local repository by id
     const onDeleteUser = (id) => {
         const isDelete = window.confirm('Вы точно хотите удалить?');
         if (isDelete) {
