@@ -63,7 +63,7 @@ function RecordEdit() {
             setStreetB(currentUser.address.streetB);
         }
     }, [])
-
+ 
     return <div className="recordEdit">
         <header className="recordEdit__title">Редактирование</header>
         <div className="recordEdit__items">
