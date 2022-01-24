@@ -39,7 +39,7 @@ function RecordCreate() {
         localStorage.setItem('users', JSON.stringify(newUsers));
         history.push("/");
     }
-
+ 
 
     return <div className="recordCreate">
         <form onSubmit={createUser}>
