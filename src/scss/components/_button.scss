@@ -1,0 +1,58 @@
+@import "../variables";
+
+.btn {
+    background: $primaryColor;
+    border-radius: 50px;
+    display: flex;
+    align-items: center;
+    padding: 0.65rem 1.2rem;
+    color: $white;
+    font-size: 1rem;
+    border: none;
+
+    &--search {
+        border-top-left-radius: 0px;
+        border-bottom-left-radius: 0px;
+    }
+
+    &:hover {
+        cursor: pointer;
+        background-color: $secondaryColor;
+    }
+
+    & .btn__icon {
+        font-size: 1.5rem;
+        margin-right: 8px;
+    }
+    &--save {
+        background: $primaryColor;
+        &:hover {
+            background: #1bda94;
+        }
+    }
+
+    &--close {
+        background: $red;
+        &:hover {
+            background: rgb(214, 20, 20);
+        }
+    }
+
+    &--sort {
+        border-radius: 10px;
+        padding: 0.5rem 1rem;
+        transition: background-color 0.15s linear;
+        &:hover {
+            background-color: $secondaryColor;
+        }
+    }
+    &--reset {
+        border-radius: 10px;
+        padding: 0.5rem 1rem;
+        background-color: rgb(197, 37, 37);
+        transition: background-color 0.15s linear;
+        &:hover {
+            background-color: rgb(228, 51, 51);
+        }
+    }
+}

@@ -1,23 +1,38 @@
-import logo from './logo.svg';
-import './App.css';
+import React, { useEffect } from 'react';
+import { Route, Switch } from 'react-router-dom';
+import Header from './components/Header';
+import Records from './pages/Records';
+import RecordEdit from './pages/RecordEdit';
+import RecordCreate from './pages/RecordCreate';
 
 function App() {
+
+  // connecting to the server
+  const apiFetch = () => {
+    const url = 'https://demo.sibers.com/users';
+    const xhr = new XMLHttpRequest();
+
+    xhr.onload = function () {
+      localStorage.setItem('users', this.responseText);
+    }
+    xhr.open('GET', url);
+    xhr.send();
+  }
+
+  // calling the api after downloading
+  // it will be called every time the application is restarted
+  useEffect(() => {
+    apiFetch();
+  }, [])
+
   return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
+    <div className="container">
+      <Header />
+      <Switch>
+        <Route path="/" exact component={() => <Records />} />
+        <Route path="/create" exact component={() => <RecordCreate />} />
+        <Route path="/:uid" exact component={() => <RecordEdit />} />
+      </Switch>
     </div>
   );
 }

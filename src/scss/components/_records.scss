@@ -1,0 +1,147 @@
+@import "../variables";
+
+.records {
+    padding: 2rem 0rem;
+    background-color: $white;
+    border-radius: 5px;
+    overflow-x: scroll;
+    border: 1px solid rgba(71, 71, 71, 0.3);
+
+    & .records__top {
+        padding: 0rem 1.2rem;
+        display: flex;
+        display: -webkit-flex;
+        justify-content: space-between;
+
+        & .records__input {
+            display: flex;
+            display: -webkit-flex;
+            & div {
+                position: relative;
+                & .records__search {
+                    color: $secondaryColor;
+                    opacity: 0.75;
+                    position: absolute;
+                    left: 13px;
+                    top: 50%;
+                    transform: translateY(-50%);
+                }
+                & input {
+                    font-size: 1rem;
+                    width: 100%;
+                    padding: 0.65rem 3rem;
+                    border-top-left-radius: 50px;
+                    border-bottom-left-radius: 50px;
+                    border: 2px solid $primaryColor;
+
+                    &:focus {
+                        outline: none;
+                    }
+                }
+
+                & .records__reset {
+                    color: $secondaryColor;
+                    opacity: 0.9;
+                    cursor: pointer;
+                    position: absolute;
+                    right: 10px;
+                    top: 50%;
+                    transform: translateY(-50%);
+                }
+            }
+        }
+
+        & .records__appearance {
+            & .records__theme {
+                color: rgb(156, 154, 154);
+
+                &:hover {
+                    cursor: pointer;
+                    color: rgb(85, 85, 85);
+                }
+            }
+        }
+    }
+
+    & .records__group {
+        padding: 0rem 1.2rem;
+
+        display: flex;
+        align-items: center;
+        display: -webkit-flex;
+        margin: 1rem 0.5rem;
+        & span {
+            font-weight: 500;
+            font-size: 1.4rem;
+            margin-right: 1rem;
+        }
+    }
+
+    & .records__body {
+        padding-top: 0.5rem;
+
+        & table thead tr,
+        & table tbody tr {
+            border-top: 1px solid rgba(81, 112, 121, 0.3);
+            border-bottom: 1px solid rgba(81, 112, 121, 0.3);
+
+            & .empty {
+                background: transparent !important ;
+                font-size: 1.5rem;
+                padding-left: 1.6rem;
+            }
+        }
+        & table thead tr {
+            text-align: left;
+            background-color: $white;
+
+            & th {
+                padding: 1rem 0.5rem;
+            }
+        }
+        & table tbody tr {
+            background: rgba(233, 226, 226, 0.35);
+            &:hover {
+                background: rgba(48, 189, 60, 0.3);
+            }
+            & td {
+                padding: 0.4rem 0.4rem;
+                max-width: 250px;
+                overflow: hidden;
+                & .email {
+                    color: blue;
+                }
+            }
+            & td a {
+                &:hover {
+                    text-decoration: underline;
+                    font-weight: bold;
+                }
+                &::after {
+                    display: block;
+                    content: attr(title);
+                    font-weight: bold;
+                    overflow: hidden;
+                    visibility: hidden;
+                    height: 0;
+                }
+            }
+
+            & td:nth-last-child(2) {
+                cursor: pointer;
+                color: rgb(58, 58, 58);
+                &:hover {
+                    background: rgba(68, 170, 64, 0.8);
+                }
+            }
+
+            & td:nth-last-child(1) {
+                color: rgb(58, 58, 58);
+                cursor: pointer;
+                &:hover {
+                    background: rgba(68, 170, 64, 0.8);
+                }
+            }
+        }
+    }
+}

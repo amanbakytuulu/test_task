@@ -1,0 +1,68 @@
+.recordEdit {
+    background: rgba(224, 224, 224, 0.8);
+    border-radius: 5px;
+    width: 100%;
+    & .recordEdit__title {
+        background: $secondaryColor;
+        display: flex;
+        display: -webkit-flex;
+        align-items: center;
+        border-top-left-radius: 5px;
+        border-top-right-radius: 5px;
+        padding: 0.8rem 1.8rem;
+        color: $white;
+        font-size: 1.5rem;
+        font-weight: 500;
+    }
+
+    & .recordEdit__items {
+        padding: 1rem;
+        font-size: 1.3rem;
+        display: flex;
+        display: -webkit-flex;
+        justify-content: center;
+        flex-wrap: wrap;
+        gap: 1rem;
+        width: 100%;
+        
+        & .recordEdit__item {
+            max-width: 500px;
+            width: 100%;
+            & div {
+                display: flex;
+                display: -webkit-flex;
+                align-items: center;
+                & p {
+                    min-width: 150px;
+                }
+                & input {
+                    padding: 0.5rem 1rem;
+                    margin: 0.7rem 0rem;
+                    border:1.5px solid $secondaryColor;
+                    border-radius: 5px;
+                    font-size: 1.2rem;
+                    &:focus{
+                        outline-color: rgb(72, 184, 72);
+                    }
+                }
+            }
+            &-title {
+                font-weight: 500;
+                margin:1rem 0rem;
+                
+            }
+            &-icon {
+                margin-right: 10px;
+            }
+        }
+    }
+
+    & .recordEdit__footer{
+        display: flex;
+        justify-content: flex-end;   
+        padding:1rem 2rem;
+        & button{
+            margin-left: 1rem;
+        }
+    }
+}
